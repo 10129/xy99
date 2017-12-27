@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletRequest;
  * Created by xieshuai on 2017/12/26.
  */
 @Controller
-@RequestMapping("/test")
+//@RequestMapping("/")
 public class TestController {
 
-    @RequestMapping(value="/query")
-    public void test(HttpServletRequest request, @RequestParam String id){
+    @RequestMapping(value="test/query")
+    public void test(HttpServletRequest request, @RequestParam String stuNum){
 
-        String AAA=id;
+        String AAA=stuNum;
     }
 
 
