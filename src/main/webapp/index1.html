@@ -1,0 +1,221 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+<head>
+
+    <title>学生信息管理</title>
+    <script src="lib/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#search").click(function () {
+                $.ajax({
+                    type:"POST",
+                    url:"${base.contextPath}/test/query",
+                    data:{
+                        stuNum:$("#xuehao").val(),
+//                        stuName:$("#xingming").val(),
+//                        stuNianji:$("#nianji").val(),
+//                        stuBanji:$("#banji").val(),
+//                        stuTea:$("#fudaoyuan").val(),
+//                        stuDepart:$("#sushelou").val(),
+                    },
+                    dataType: "json",
+
+                    success: function(data){
+                        //   $("#searchResult").html("返回值：" + data[0].stu_num+ data[0].stu_name+ data[0].stu_type+ data[0].stu_birth+ data[0].stu_sex+ data[0].stu_nianji+ data[0].stu_banji+ data[0].stu_tea+ data[0].stu_depart);
+                        //   $("#searchResult").html(data.length);
+                        $('#searchResult tr').empty();//删除之前的数据
+
+                        var s = '';
+                        for (var i = 0; i < data.length; i++) s += '<tr><td>' + data[i].stuNum + '</td><td>' + data[i].stuName + '</td><td>' + data[i].stuType + '</td>'
+                            + '<td>' + data[i].stuBirth + '</td><td>' + data[i].stuSex +  '</td><td>' + data[i].stuNianji +  '</td><td>' + data[i].stuBanji +  '</td>'
+                            + '<td>' + data[i].stuTea +  '</td><td>' + data[i].stuDepart+'</td></tr>';
+                        $('#searchResult').append(s);
+
+                        if (true) {
+                            // $("#searchResult").html(data.msg);
+                        } else {
+                            //  $("#searchResult").html("出现错误：" + data.msg);
+                        }
+                    },
+                    error: function(jqXHR){
+                        alert("发生错误：" + jqXHR.status);
+                    },
+                });
+
+            });
+            $("#signin").click(function () {
+                $.ajax({
+                    type:"POST",
+                    url:"mvc/signin",
+                    data:{
+                        stuid:$("#stuid").val(),
+                        stuname:$("#nameid").val(),
+                        stutype:$("#typeid").val(),
+                        stubirth:$("#birthid").val(),
+                        stusex:$("#sexid").val(),
+                        stunianji:$("#nianjiid").val(),
+                        stubanji:$("#banjiid").val(),
+                        stutea:$("#laoshiid").val(),
+                        studep:$("#susheid").val()
+                    },
+                    dataType:"json",
+                    success:function (data) {
+                        if(data.success){
+                            alert("学生创建成功！！！");
+                        }else{
+                            alert("学生创建失败");
+                        }
+                    },
+                    error:function () {
+                        alert("学生创建发生错误");
+                    },
+
+                })
+            })
+        });
+
+
+
+    </script>
+
+    <style type="text/css">
+
+
+
+
+        .form-signin {
+            max-width: 300px;
+            padding: 20px 30px 20px;
+            margin-top:  0px;
+            margin-left: 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+        }
+
+        .form-signin2 {
+            max-width: 850px;
+            padding: 20px 30px 20px;
+            margin-top:  -330px;
+            margin-left: 500px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+        }
+        .setwidth1{
+            width:100px;
+        }
+        .setwidth2{
+
+        }
+    </style>
+</head>
+<body>
+<form  method="post" class="form-signin">
+
+    <h2><strong>学生信息注册</strong></h2>
+    学  号：
+    <input id="stuid" class="setwidth1" name="学号" type="text"><br>
+    姓  名：
+    <input  id="nameid" class ="setwidth1" name="姓名" type="text"><br>
+    学生类型：
+    <select id="typeid" class = "setwidth1" name = "类型">
+        <option value ="本科生">本科生</option>>
+        <option value ="研究生">研究生</option>>
+        <option value ="博士生">博士生</option>>
+    </select></br>
+    出生日期：
+    <input id="birthid" class ="setwidth1" name="出生日期" type="text"><br>
+    性  别：
+    <select id="sexid" class ="setwidth1" name="性别">
+        <option value ="男">男</option>
+        <option value ="女">女</option>
+    </select><br>
+    年  级：
+    <select id="nianjiid" class ="setwidth1" name ="年级">
+        <option value ="一年级">一年级</option>
+        <option value ="二年级">二年级</option>
+        <option value ="三年级">三年级</option>
+        <option value ="四年级">四年级</option>
+    </select><br>
+    班  级：
+    <input id="banjiid" class ="setwidth1" name="班级" type="text"><br>
+    辅导员 ：
+    <input id="laoshiid" class ="setwidth1" name="辅导员" type="text"><br>
+    宿舍楼 ：
+    <select id="susheid" class ="setwidth1" name ="宿舍楼">
+        <option value ="1">1</option>
+        <option value ="2">2</option>
+        <option value ="3">3</option>
+        <option value ="4">4</option>
+        <option value ="5">5</option>
+        <option value ="6">6</option>
+    </select><br>
+    <input type="button" id="signin" value="注册">
+
+
+
+</form>
+<form id="chaxun"  method="post" class="form-signin2">
+    <h2><strong>学生信息查询</strong></h2>
+    学  号：
+    <input id="xuehao" class="setwidth1" name="学号查询" type="text">
+    姓  名：
+    <input id="xingming" class="setwidth1" name="姓名查询" type="text"><br>
+    年  级：
+    <select id="nianji" class="setwidth1" name="年级查询">
+        <option value="">所有年级</option>
+        <option value ="一年级">一年级</option>
+        <option value ="二年级">二年级</option>
+        <option value ="三年级">三年级</option>
+        <option value ="四年级">四年级</option>
+    </select>
+    班  级：
+    <input  id="banji" class="setwidth1" name="班级查询" type="text"><br>
+    辅导 员：
+    <input id="fudaoyuan" class="setwidth1" name="辅导员查询" type="text">
+    宿舍 楼：
+    <select id="sushelou" class ="setwidth1" name ="宿舍楼查询">
+        <option value="">所有宿舍</option>
+        <option value ="1">1</option>
+        <option value ="2">2</option>
+        <option value ="3">3</option>
+        <option value ="4">4</option>
+        <option value ="5">5</option>
+        <option value ="6">6</option>
+    </select><br>
+    <input  id="search" type="button" value="查询">
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>类型</th>
+            <th>出生日期</th>
+            <th>性别</th>
+            <th>年级</th>
+            <th>班级</th>
+            <th>老师</th>
+            <th>宿舍</th>
+        </tr>
+        </thead>
+        <tbody id="searchResult">
+
+        </tbody>
+    </table>
+
+
+
+</form>
+</body>
+</html>
