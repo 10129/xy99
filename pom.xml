@@ -9,7 +9,11 @@
   <name>core</name>
   <url>http://maven.apache.org</url>
 
+
   <properties>
+    <!--解决警告：Warning:java: 源值1.5已过时, 将在未来所有发行版中删除-->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <!-- spring版本号 -->
     <spring.version>4.0.6.RELEASE</spring.version>
     <!-- mybatis版本号 -->
@@ -67,7 +71,11 @@
       <artifactId>spring-test</artifactId>
       <version>${spring.version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
     <!-- mybatis核心包 -->
     <dependency>
       <groupId>org.mybatis</groupId>
@@ -99,6 +107,19 @@
       <!--<artifactId>ojdbc14</artifactId>-->
       <!--<version>10.2.0.1.0</version>-->
     <!--</dependency>-->
+    <!-- mysql相关依赖 -->
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.29</version>
+      </dependency>
+      <!-- mysql相关依赖END-->
+    <!--components依赖  -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient-android</artifactId>
+      <version>4.3.5.1</version>
+    </dependency>
 
     <!-- junit测试包 -->
     <dependency>
@@ -175,7 +196,6 @@
       <version>${sitemesh.version}</version>
     </dependency>
     <!-- maven打成war包放到tomcat目录下，即可运行 -->
-
   </dependencies>
   <build>
     <finalName>core</finalName>

@@ -2,13 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context-4.0.xsd
                         http://www.springframework.org/schema/mvc
-                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 加载jdbc -->
     <context:property-placeholder location="classpath:profiles/jdbc.properties"/>
 
@@ -35,11 +35,16 @@
     </bean>
 
 
-     spring和MyBatis完美整合，不需要mybatis的配置映射文件
+   <!--  spring和MyBatis完美整合，不需要mybatis的配置映射文件-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <!-- 自动扫描mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"></property>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath*:/xy99/core/test/TestMapper.xml"/>
+        <!--<property name="plugins">-->
+            <!--<array>-->
+                <!--<bean class="com.hand.hap.core.interceptor.RequestContextInterceptor"/>-->
+            <!--</array>-->
+        <!--</property>-->
+        <property name="configLocation" value="classpath:mybatis-configuration.xml"/>
     </bean>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
@@ -47,6 +52,51 @@
         <property name="basePackage" value="com.alan.smis.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!-- mapper definition -->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="*.**.mapper"/>
+        <property name="processPropertyPlaceHolders" value="true"/>
+        <property name="propertiesMap">
+            <map>
+                <entry key="mappers" value="com.hand.hap.mybatis.common.Mapper"/>
+                <entry key="IDENTITY" value="${mybatis.identity}"/>
+                <entry key="dataBaseType" value="${db.type}"/>
+                <entry key="seqFormat" value="{3}_s.nextVal"/>
+                <entry key="enableMethodAnnotation" value="true"/>
+            </map>
+        </property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+
+    <context:component-scan base-package="**.*.service"/>
+    <context:component-scan base-package="**.*.components"/>
+
+    <!--<bean id="requestAD" class="com.hand.hap.core.impl.ServiceExecutionAdvice"/>-->
+
+    <!--<bean id="apiInvokeExecutionAdvice" class="com.hand.hap.api.logs.service.impl.ApiInvokeExecutionAdvice"/>-->
+
+    <!--<bean id="apiRequestExecutionAdvice" class="com.hand.hap.api.logs.service.impl.ApiRequestExecutionAdvice"/>-->
+
+    <!--<aop:config expose-proxy="true">-->
+        <!--<aop:pointcut id="servicePointcut" expression="execution(* *..*ServiceImpl.*(..))"/>-->
+        <!--<aop:advisor advice-ref="requestAD" pointcut-ref="servicePointcut"/>-->
+    <!--</aop:config>-->
+
+    <!--<aop:config expose-proxy="true">-->
+        <!--<aop:pointcut id="apiInvokePointcut" expression="execution(* com.hand.hap.api.gateway.service.IApiInvokeService.apiInvoke(..))"/>-->
+        <!--<aop:advisor advice-ref="apiInvokeExecutionAdvice" pointcut-ref="apiInvokePointcut"/>-->
+    <!--</aop:config>-->
+
+    <!--<aop:config expose-proxy="true">-->
+        <!--<aop:pointcut id="apiRequestPointcut" expression="execution(* com.hand.hap.api.gateway.controllers.ApiInvokeContoller.sentRequest(..))"/>-->
+        <!--<aop:advisor advice-ref="apiRequestExecutionAdvice" pointcut-ref="apiRequestPointcut"/>-->
+    <!--</aop:config>-->
 
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
     <bean id="transactionManager"
