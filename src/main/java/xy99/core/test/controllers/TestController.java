@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by xieshuai on 2017/12/26.
  */
-@Controller
-//@RequestMapping("/")
+//@Controller
+@RequestMapping("/test")
 public class TestController {
 
-    @RequestMapping(value="test/query")
-    public void test(HttpServletRequest request, @RequestParam String stuNum){
+    @RequestMapping(value="/query")
+    public void test(HttpServletRequest request){
 
-        String AAA=stuNum;
+        String AAA="11";
     }
 
 
