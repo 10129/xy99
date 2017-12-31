@@ -11,7 +11,7 @@
                            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
     <!-- 加载jdbc -->
-    <context:property-placeholder location="classpath:profiles/jdbc.properties"/>
+    <context:property-placeholder location="classpath:profiles/dev.properties"/>
     <!-- jndi dataSource-->
     <!--<bean id="dataSource1" class="org.springframework.jndi.JndiObjectFactoryBean">-->
         <!--<property name="jndiName" value="${db.jndiName}"/>-->
