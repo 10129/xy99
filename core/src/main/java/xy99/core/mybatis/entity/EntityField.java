@@ -67,7 +67,7 @@ public class EntityField {
             result = this.getter.getAnnotation(annotationClass);
         }
 
-        return result;
+        return (T) result;
     }
 
     public <T extends Annotation> T[] getAnnotations(Class<T> annotationClass) {
@@ -84,7 +84,7 @@ public class EntityField {
             result = this.getter.getAnnotationsByType(annotationClass);
         }
 
-        return result;
+        return (T[]) result;
     }
 
     public String getName() {

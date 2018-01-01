@@ -1,11 +1,11 @@
 package xy99.core.mybatis.provider.base;
 
 
-import com.hand.hap.mybatis.common.Criteria;
-import com.hand.hap.mybatis.mapperhelper.EntityHelper;
-import com.hand.hap.mybatis.mapperhelper.MapperHelper;
-import com.hand.hap.mybatis.mapperhelper.MapperTemplate;
-import com.hand.hap.mybatis.mapperhelper.SqlHelper;
+import xy99.core.mybatis.common.Criteria;
+import xy99.core.mybatis.mapperhelper.EntityHelper;
+import xy99.core.mybatis.mapperhelper.MapperHelper;
+import xy99.core.mybatis.mapperhelper.MapperTemplate;
+import xy99.core.mybatis.mapperhelper.SqlHelper;
 import com.hand.hap.system.dto.BaseDTO;
 import java.util.Map;
 import org.apache.ibatis.mapping.MappedStatement;

@@ -1,7 +1,7 @@
 package xy99.core.mybatis.provider;
 
-import com.hand.hap.mybatis.mapperhelper.MapperHelper;
-import com.hand.hap.mybatis.mapperhelper.MapperTemplate;
+import xy99.core.mybatis.mapperhelper.MapperHelper;
+import xy99.core.mybatis.mapperhelper.MapperTemplate;
 
 public class EmptyProvider extends MapperTemplate {
     public EmptyProvider(Class<?> mapperClass, MapperHelper mapperHelper) {

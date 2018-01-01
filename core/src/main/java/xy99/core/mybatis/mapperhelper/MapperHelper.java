@@ -1,10 +1,10 @@
 package xy99.core.mybatis.mapperhelper;
 
 
-import com.hand.hap.mybatis.entity.Config;
-import com.hand.hap.mybatis.mapperhelper.MapperTemplate;
-import com.hand.hap.mybatis.provider.EmptyProvider;
-import com.hand.hap.mybatis.util.StringUtil;
+import xy99.core.mybatis.entity.Config;
+import xy99.core.mybatis.mapperhelper.MapperTemplate;
+import xy99.core.mybatis.provider.EmptyProvider;
+import xy99.core.mybatis.util.StringUtil;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;

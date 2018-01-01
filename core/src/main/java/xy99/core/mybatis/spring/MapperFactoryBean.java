@@ -1,7 +1,7 @@
 package xy99.core.mybatis.spring;
 
 
-import com.hand.hap.mybatis.mapperhelper.MapperHelper;
+import xy99.core.mybatis.mapperhelper.MapperHelper;
 
 public class MapperFactoryBean<T> extends org.mybatis.spring.mapper.MapperFactoryBean<T> {
     private MapperHelper mapperHelper;

@@ -12,6 +12,8 @@ import java.util.Set;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
 import org.apache.ibatis.type.TypeHandler;
+import xy99.core.mybatis.mapperhelper.EntityHelper;
+import xy99.core.mybatis.util.StringUtil;
 
 public class Example implements IDynamicTableName {
     protected String orderByClause;

@@ -1,7 +1,7 @@
 package xy99.core.mybatis.common;
 
-import com.hand.hap.mybatis.common.sqlserver.InsertMapper;
-import com.hand.hap.mybatis.common.sqlserver.InsertSelectiveMapper;
+import xy99.core.mybatis.common.sqlserver.InsertMapper;
+import xy99.core.mybatis.common.sqlserver.InsertSelectiveMapper;
 
 public interface SqlServerMapper<T> extends InsertMapper<T>, InsertSelectiveMapper<T> {
 }

@@ -1,6 +1,6 @@
 package xy99.core.mybatis.common.base.select;
 
-import com.hand.hap.mybatis.provider.base.BaseSelectProvider;
+import xy99.core.mybatis.provider.base.BaseSelectProvider;
 import org.apache.ibatis.annotations.SelectProvider;
 
 public interface SelectCountMapper<T> {

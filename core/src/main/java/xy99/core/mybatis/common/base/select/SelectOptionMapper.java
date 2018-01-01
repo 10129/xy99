@@ -1,7 +1,7 @@
 package xy99.core.mybatis.common.base.select;
 
-import com.hand.hap.mybatis.common.Criteria;
-import com.hand.hap.mybatis.provider.base.BaseSelectProvider;
+import xy99.core.mybatis.common.Criteria;
+import xy99.core.mybatis.provider.base.BaseSelectProvider;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;

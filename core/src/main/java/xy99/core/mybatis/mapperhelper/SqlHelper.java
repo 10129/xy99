@@ -1,22 +1,22 @@
 package xy99.core.mybatis.mapperhelper;
 
 
-import com.hand.hap.mybatis.annotation.Condition;
-import com.hand.hap.mybatis.common.Criteria;
-import com.hand.hap.mybatis.common.query.Comparison;
-import com.hand.hap.mybatis.common.query.JoinColumn;
-import com.hand.hap.mybatis.common.query.JoinOn;
-import com.hand.hap.mybatis.common.query.JoinTable;
-import com.hand.hap.mybatis.common.query.Selection;
-import com.hand.hap.mybatis.common.query.SortField;
-import com.hand.hap.mybatis.common.query.Where;
-import com.hand.hap.mybatis.common.query.WhereField;
-import com.hand.hap.mybatis.entity.EntityColumn;
-import com.hand.hap.mybatis.entity.EntityField;
-import com.hand.hap.mybatis.entity.EntityTable;
-import com.hand.hap.mybatis.entity.IDynamicTableName;
-import com.hand.hap.mybatis.mapperhelper.EntityHelper;
-import com.hand.hap.mybatis.util.StringUtil;
+import xy99.core.mybatis.annotation.Condition;
+import xy99.core.mybatis.common.Criteria;
+import xy99.core.mybatis.common.query.Comparison;
+import xy99.core.mybatis.common.query.JoinColumn;
+import xy99.core.mybatis.common.query.JoinOn;
+import xy99.core.mybatis.common.query.JoinTable;
+import xy99.core.mybatis.common.query.Selection;
+import xy99.core.mybatis.common.query.SortField;
+import xy99.core.mybatis.common.query.Where;
+import xy99.core.mybatis.common.query.WhereField;
+import xy99.core.mybatis.entity.EntityColumn;
+import xy99.core.mybatis.entity.EntityField;
+import xy99.core.mybatis.entity.EntityTable;
+import xy99.core.mybatis.entity.IDynamicTableName;
+import xy99.core.mybatis.mapperhelper.EntityHelper;
+import xy99.core.mybatis.util.StringUtil;
 import com.hand.hap.system.dto.BaseDTO;
 import com.hand.hap.system.dto.DTOClassInfo;
 import java.lang.reflect.InvocationTargetException;
@@ -41,11 +41,11 @@ public class SqlHelper {
     }
 
     public static String getDynamicTableName(Class<?> entityClass, String tableName) {
-        return IDynamicTableName.class.isAssignableFrom(entityClass)?"<if test=\"@com.hand.hap.mybatis.util.OGNL@isDynamicParameter(_parameter) and dynamicTableName != null and dynamicTableName != \'\'\">\n${dynamicTableName}\n</if>\n<if test=\"@com.hand.hap.mybatis.util.OGNL@isNotDynamicParameter(_parameter) or dynamicTableName == null or dynamicTableName == \'\'\">\n" + tableName + "\n</if>":tableName;
+        return IDynamicTableName.class.isAssignableFrom(entityClass)?"<if test=\"@xy99.core.mybatis.util.OGNL@isDynamicParameter(_parameter) and dynamicTableName != null and dynamicTableName != \'\'\">\n${dynamicTableName}\n</if>\n<if test=\"@xy99.core.mybatis.util.OGNL@isNotDynamicParameter(_parameter) or dynamicTableName == null or dynamicTableName == \'\'\">\n" + tableName + "\n</if>":tableName;
     }
 
     public static String getDynamicTableName(Class<?> entityClass, String tableName, String parameterName) {
-        return IDynamicTableName.class.isAssignableFrom(entityClass)?(StringUtil.isNotEmpty(parameterName)?"<if test=\"@com.hand.hap.mybatis.util.OGNL@isDynamicParameter(" + parameterName + ") and " + parameterName + ".dynamicTableName != null and " + parameterName + ".dynamicTableName != \'\'\">\n${" + parameterName + ".dynamicTableName}\n</if>\n<if test=\"@com.hand.hap.mybatis.util.OGNL@isNotDynamicParameter(" + parameterName + ") or " + parameterName + ".dynamicTableName == null or " + parameterName + ".dynamicTableName == \'\'\">\n" + tableName + "\n</if>":getDynamicTableName(entityClass, tableName)):tableName;
+        return IDynamicTableName.class.isAssignableFrom(entityClass)?(StringUtil.isNotEmpty(parameterName)?"<if test=\"@xy99.core.mybatis.util.OGNL@isDynamicParameter(" + parameterName + ") and " + parameterName + ".dynamicTableName != null and " + parameterName + ".dynamicTableName != \'\'\">\n${" + parameterName + ".dynamicTableName}\n</if>\n<if test=\"@xy99.core.mybatis.util.OGNL@isNotDynamicParameter(" + parameterName + ") or " + parameterName + ".dynamicTableName == null or " + parameterName + ".dynamicTableName == \'\'\">\n" + tableName + "\n</if>":getDynamicTableName(entityClass, tableName)):tableName;
     }
 
     public static String getBindCache(EntityColumn column) {
@@ -450,7 +450,7 @@ public class SqlHelper {
     public static String orderByDefault(Class<?> entityClass) {
         StringBuilder sql = new StringBuilder();
         if(BaseDTO.class.isAssignableFrom(entityClass)) {
-            sql.append("<bind name=\"__orderByClause\" value=\"@com.hand.hap.mybatis.util.OGNL@getOrderByClause(_parameter)\"/>");
+            sql.append("<bind name=\"__orderByClause\" value=\"@xy99.core.mybatis.util.OGNL@getOrderByClause(_parameter)\"/>");
             sql.append("<if test=\"__orderByClause!=null\">");
             sql.append("ORDER BY ${__orderByClause}");
             sql.append("</if>");
@@ -467,7 +467,7 @@ public class SqlHelper {
     public static String orderByDefault_TL(Class<?> entityClass) {
         StringBuilder sql = new StringBuilder();
         if(BaseDTO.class.isAssignableFrom(entityClass)) {
-            sql.append("<bind name=\"__orderByClause\" value=\"@com.hand.hap.mybatis.util.OGNL@getOrderByClause_TL(_parameter)\"/>");
+            sql.append("<bind name=\"__orderByClause\" value=\"@xy99.core.mybatis.util.OGNL@getOrderByClause_TL(_parameter)\"/>");
             sql.append("<if test=\"__orderByClause!=null\">");
             sql.append("ORDER BY ${__orderByClause}");
             sql.append("</if>");
@@ -483,12 +483,12 @@ public class SqlHelper {
 
     public static String exampleSelectColumns(Class<?> entityClass) {
         StringBuilder sql = new StringBuilder();
-        sql.append("<if test=\"@com.hand.hap.mybatis.util.OGNL@hasSelectColumns(_parameter)\">");
+        sql.append("<if test=\"@xy99.core.mybatis.util.OGNL@hasSelectColumns(_parameter)\">");
         sql.append("<foreach collection=\"_parameter.selectColumns\" item=\"selectColumn\" separator=\",\">");
         sql.append("${selectColumn}");
         sql.append("</foreach>");
         sql.append("</if>");
-        sql.append("<if test=\"@com.hand.hap.mybatis.util.OGNL@hasNoSelectColumns(_parameter)\">");
+        sql.append("<if test=\"@xy99.core.mybatis.util.OGNL@hasNoSelectColumns(_parameter)\">");
         sql.append(getAllColumns(entityClass));
         sql.append("</if>");
         return sql.toString();

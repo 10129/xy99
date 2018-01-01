@@ -1,7 +1,9 @@
 package xy99.core.mybatis.entity;
 
 
+import xy99.core.mybatis.code.IdentityDialect;
 import xy99.core.mybatis.code.Style;
+import xy99.core.mybatis.util.StringUtil;
 
 import java.util.Properties;
 

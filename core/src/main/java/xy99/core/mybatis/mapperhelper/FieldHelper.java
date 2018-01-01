@@ -1,7 +1,7 @@
 package xy99.core.mybatis.mapperhelper;
 
 
-import com.hand.hap.mybatis.entity.EntityField;
+import xy99.core.mybatis.entity.EntityField;
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;

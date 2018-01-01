@@ -1,11 +1,11 @@
 package xy99.core.mybatis.common;
 
 
-import com.hand.hap.mybatis.common.query.SQLField;
-import com.hand.hap.mybatis.common.query.Selection;
-import com.hand.hap.mybatis.common.query.SortField;
-import com.hand.hap.mybatis.common.query.SortType;
-import com.hand.hap.mybatis.common.query.WhereField;
+import xy99.core.mybatis.common.query.SQLField;
+import xy99.core.mybatis.common.query.Selection;
+import xy99.core.mybatis.common.query.SortField;
+import xy99.core.mybatis.common.query.SortType;
+import xy99.core.mybatis.common.query.WhereField;
 import com.hand.hap.system.dto.BaseDTO;
 import java.util.ArrayList;
 import java.util.Arrays;

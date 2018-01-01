@@ -1,12 +1,12 @@
 package xy99.core.mybatis.entity;
 
 
-import com.hand.hap.mybatis.annotation.Condition;
-import com.hand.hap.mybatis.common.query.JoinColumn;
-import com.hand.hap.mybatis.common.query.JoinTable;
-import com.hand.hap.mybatis.common.query.Where;
-import com.hand.hap.mybatis.entity.EntityTable;
-import com.hand.hap.mybatis.util.StringUtil;
+import xy99.core.mybatis.annotation.Condition;
+import xy99.core.mybatis.common.query.JoinColumn;
+import xy99.core.mybatis.common.query.JoinTable;
+import xy99.core.mybatis.common.query.Where;
+import xy99.core.mybatis.entity.EntityTable;
+import xy99.core.mybatis.util.StringUtil;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

@@ -1,9 +1,9 @@
 package xy99.core.mybatis.provider;
 
 
-import com.hand.hap.mybatis.mapperhelper.MapperHelper;
-import com.hand.hap.mybatis.mapperhelper.MapperTemplate;
-import com.hand.hap.mybatis.mapperhelper.SqlHelper;
+import xy99.core.mybatis.mapperhelper.MapperHelper;
+import xy99.core.mybatis.mapperhelper.MapperTemplate;
+import xy99.core.mybatis.mapperhelper.SqlHelper;
 import org.apache.ibatis.mapping.MappedStatement;
 
 public class ExampleProvider extends MapperTemplate {

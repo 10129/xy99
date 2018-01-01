@@ -1,13 +1,13 @@
 package xy99.core.mybatis.mapperhelper;
 
 
-import com.hand.hap.mybatis.entity.EntityColumn;
-import com.hand.hap.mybatis.entity.EntityTable;
-import com.hand.hap.mybatis.entity.IDynamicTableName;
-import com.hand.hap.mybatis.mapperhelper.EntityHelper;
-import com.hand.hap.mybatis.mapperhelper.MapperHelper;
-import com.hand.hap.mybatis.mapperhelper.MultipleJdbc3KeyGenerator;
-import com.hand.hap.mybatis.util.StringUtil;
+import xy99.core.mybatis.entity.EntityColumn;
+import xy99.core.mybatis.entity.EntityTable;
+import xy99.core.mybatis.entity.IDynamicTableName;
+import xy99.core.mybatis.mapperhelper.EntityHelper;
+import xy99.core.mybatis.mapperhelper.MapperHelper;
+import xy99.core.mybatis.mapperhelper.MultipleJdbc3KeyGenerator;
+import xy99.core.mybatis.util.StringUtil;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -260,8 +260,8 @@ public abstract class MapperTemplate {
     protected SqlNode getDynamicTableNameNode(Class<?> entityClass) {
         if(IDynamicTableName.class.isAssignableFrom(entityClass)) {
             ArrayList ifSqlNodes = new ArrayList();
-            ifSqlNodes.add(new IfSqlNode(new TextSqlNode("${dynamicTableName}"), "@com.hand.hap.mybatis.util.OGNL@isDynamicParameter(_parameter) and dynamicTableName != null and dynamicTableName != \'\'"));
-            ifSqlNodes.add(new IfSqlNode(new StaticTextSqlNode(this.tableName(entityClass)), "@com.hand.hap.mybatis.util.OGNL@isNotDynamicParameter(_parameter) or dynamicTableName == null or dynamicTableName == \'\'"));
+            ifSqlNodes.add(new IfSqlNode(new TextSqlNode("${dynamicTableName}"), "@xy99.core.mybatis.util.OGNL@isDynamicParameter(_parameter) and dynamicTableName != null and dynamicTableName != \'\'"));
+            ifSqlNodes.add(new IfSqlNode(new StaticTextSqlNode(this.tableName(entityClass)), "@xy99.core.mybatis.util.OGNL@isNotDynamicParameter(_parameter) or dynamicTableName == null or dynamicTableName == \'\'"));
             return new MixedSqlNode(ifSqlNodes);
         } else {
             return new StaticTextSqlNode(this.tableName(entityClass));
@@ -273,8 +273,8 @@ public abstract class MapperTemplate {
     protected SqlNode getDynamicTableNameNode(Class<?> entityClass, String parameterName) {
         if(IDynamicTableName.class.isAssignableFrom(entityClass)) {
             ArrayList ifSqlNodes = new ArrayList();
-            ifSqlNodes.add(new IfSqlNode(new TextSqlNode("${" + parameterName + ".dynamicTableName}"), "@com.hand.hap.mybatis.util.OGNL@isDynamicParameter(" + parameterName + ") and " + parameterName + ".dynamicTableName != null and  " + parameterName + ".dynamicTableName != \'\'"));
-            ifSqlNodes.add(new IfSqlNode(new StaticTextSqlNode(this.tableName(entityClass)), "@com.hand.hap.mybatis.util.OGNL@isNotDynamicParameter(" + parameterName + ") or " + parameterName + ".dynamicTableName == null or " + parameterName + ".dynamicTableName == \'\'"));
+            ifSqlNodes.add(new IfSqlNode(new TextSqlNode("${" + parameterName + ".dynamicTableName}"), "@xy99.core.mybatis.util.OGNL@isDynamicParameter(" + parameterName + ") and " + parameterName + ".dynamicTableName != null and  " + parameterName + ".dynamicTableName != \'\'"));
+            ifSqlNodes.add(new IfSqlNode(new StaticTextSqlNode(this.tableName(entityClass)), "@xy99.core.mybatis.util.OGNL@isNotDynamicParameter(" + parameterName + ") or " + parameterName + ".dynamicTableName == null or " + parameterName + ".dynamicTableName == \'\'"));
             return new MixedSqlNode(ifSqlNodes);
         } else {
             return new StaticTextSqlNode(this.tableName(entityClass));

@@ -1,9 +1,9 @@
 package xy99.core.mybatis.provider;
 
 
-import com.hand.hap.mybatis.mapperhelper.MapperHelper;
-import com.hand.hap.mybatis.mapperhelper.MapperTemplate;
-import com.hand.hap.mybatis.provider.ExampleProvider;
+import xy99.core.mybatis.mapperhelper.MapperHelper;
+import xy99.core.mybatis.mapperhelper.MapperTemplate;
+import xy99.core.mybatis.provider.ExampleProvider;
 import org.apache.ibatis.mapping.MappedStatement;
 
 public class ConditionProvider extends MapperTemplate {

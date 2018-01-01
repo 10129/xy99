@@ -1,7 +1,7 @@
 package xy99.core.mybatis.common;
 
-import com.hand.hap.mybatis.common.rowbounds.SelectByExampleRowBoundsMapper;
-import com.hand.hap.mybatis.common.rowbounds.SelectRowBoundsMapper;
+import xy99.core.mybatis.common.rowbounds.SelectByExampleRowBoundsMapper;
+import xy99.core.mybatis.common.rowbounds.SelectRowBoundsMapper;
 
 public interface RowBoundsMapper<T> extends SelectByExampleRowBoundsMapper<T>, SelectRowBoundsMapper<T> {
 }

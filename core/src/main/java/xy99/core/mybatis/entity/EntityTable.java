@@ -1,8 +1,8 @@
 package xy99.core.mybatis.entity;
 
 
-import com.hand.hap.mybatis.entity.EntityColumn;
-import com.hand.hap.mybatis.util.StringUtil;
+import xy99.core.mybatis.entity.EntityColumn;
+import xy99.core.mybatis.util.StringUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
