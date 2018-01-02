@@ -18,21 +18,22 @@ public class StringUtil {
     }
 
     public static String convertByStyle(String str, Style style) {
-        switch(null.$SwitchMap$com$hand$hap$mybatis$code$Style[style.ordinal()]) {
-            case 1:
-                return camelhumpToUnderline(str);
-            case 2:
-                return str.toUpperCase();
-            case 3:
-                return str.toLowerCase();
-            case 4:
-                return camelhumpToUnderline(str).toLowerCase();
-            case 5:
-                return camelhumpToUnderline(str).toUpperCase();
-            case 6:
-            default:
-                return str;
-        }
+//        switch(null.$SwitchMap$com$hand$hap$mybatis$code$Style[style.ordinal()]) {
+//            case 1:
+//                return camelhumpToUnderline(str);
+//            case 2:
+//                return str.toUpperCase();
+//            case 3:
+//                return str.toLowerCase();
+//            case 4:
+//                return camelhumpToUnderline(str).toLowerCase();
+//            case 5:
+//                return camelhumpToUnderline(str).toUpperCase();
+//            case 6:
+//            default:
+//                return str;
+//        }
+        return str.toLowerCase();
     }
 
     public static String camelhumpToUnderline(String str) {

@@ -6,7 +6,7 @@ import xy99.core.mybatis.mapperhelper.EntityHelper;
 import xy99.core.mybatis.mapperhelper.MapperHelper;
 import xy99.core.mybatis.mapperhelper.MapperTemplate;
 import xy99.core.mybatis.mapperhelper.SqlHelper;
-import com.hand.hap.system.dto.BaseDTO;
+import xy99.core.system.dto.BaseDTO;
 import java.util.Map;
 import org.apache.ibatis.mapping.MappedStatement;
 

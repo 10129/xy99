@@ -1,13 +1,12 @@
 package xy99.core.mybatis.util;
 
 
-import com.hand.hap.core.annotation.MultiLanguageField;
+import xy99.core.core.annotation.MultiLanguageFiled;
 import xy99.core.mybatis.entity.EntityField;
 import xy99.core.mybatis.entity.Example;
 import xy99.core.mybatis.entity.IDynamicTableName;
-import xy99.core.mybatis.util.StringUtil;
-import com.hand.hap.system.dto.BaseDTO;
-import com.hand.hap.system.dto.DTOClassInfo;
+import xy99.core.system.dto.BaseDTO;
+import xy99.core.system.dto.DTOClassInfo;
 import java.util.Collection;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -101,7 +100,7 @@ public abstract class OGNL {
                     for(int var9 = 0; var9 < var8; ++var9) {
                         EntityField f = var7[var9];
                         if(f.getName().equals(columnName)) {
-                            if(f.getAnnotation(MultiLanguageField.class) == null) {
+                            if(f.getAnnotation(MultiLanguageFiled.class) == null) {
                                 sb.append("b.");
                             } else {
                                 sb.append("t.");

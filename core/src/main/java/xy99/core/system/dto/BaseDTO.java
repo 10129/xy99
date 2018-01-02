@@ -183,7 +183,7 @@ public class BaseDTO implements Serializable, BaseConstants, IBaseDto {
     @Transient
     @JsonIgnore
     protected <T> T innerGet(String key) {
-        return this.innerMap.get(key);
+        return (T) this.innerMap.get(key);
     }
 
     protected void innerSet(String key, Object value) {

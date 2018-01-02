@@ -4,7 +4,7 @@ package xy99.core.mybatis.provider.base;
 import xy99.core.mybatis.mapperhelper.MapperHelper;
 import xy99.core.mybatis.mapperhelper.MapperTemplate;
 import xy99.core.mybatis.mapperhelper.SqlHelper;
-import com.hand.hap.system.dto.BaseDTO;
+import xy99.core.system.dto.BaseDTO;
 import org.apache.ibatis.mapping.MappedStatement;
 
 public class BaseUpdateProvider extends MapperTemplate {

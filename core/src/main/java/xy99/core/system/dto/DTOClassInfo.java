@@ -5,7 +5,7 @@ package xy99.core.system.dto;
  */
 
 import xy99.core.core.annotation.Children;
-import xy99.core.core.annotation.MultiLanguageField;
+import xy99.core.core.annotation.MultiLanguageFiled;
 import xy99.core.mybatis.common.query.JoinCache;
 import xy99.core.mybatis.common.query.JoinCode;
 import xy99.core.mybatis.entity.EntityField;
@@ -18,7 +18,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -26,7 +25,7 @@ import org.apache.commons.lang.StringUtils;
 
 public final class DTOClassInfo {
     private static final Comparator<EntityField> FIELD_COMPARATOR = Comparator.comparing(EntityField::getName);
-    private static final Class<? extends Annotation>[] CONCERNED_ANNOTATION = new Class[]{Id.class, Children.class, MultiLanguageField.class, JoinCache.class, JoinCode.class};
+    private static final Class<? extends Annotation>[] CONCERNED_ANNOTATION = new Class[]{Id.class, Children.class, MultiLanguageFiled.class, JoinCache.class, JoinCode.class};
     private static final Map<Class<?>, EntityField[]>[] CLASS_ANNO_MAPPING;
     private static final Map<Class<?>, Map<String, EntityField>> CLASS_FIELDS_MAPPING;
     private static final Map<String, String> CAMEL_UL_MAP;

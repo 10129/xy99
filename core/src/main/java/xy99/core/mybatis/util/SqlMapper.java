@@ -45,12 +45,12 @@ public class SqlMapper {
 
     public <T> T selectOne(String sql, Class<T> resultType) {
         List list = this.selectList(sql, resultType);
-        return this.getOne(list);
+        return this.getOne((List<T>) list);
     }
 
     public <T> T selectOne(String sql, Object value, Class<T> resultType) {
         List list = this.selectList(sql, value, resultType);
-        return this.getOne(list);
+        return this.getOne((List<T>) list);
     }
 
     public List<Map<String, Object>> selectList(String sql) {

@@ -2,7 +2,6 @@ package xy99.core.mybatis.mapperhelper;
 
 
 import xy99.core.mybatis.entity.Config;
-import xy99.core.mybatis.mapperhelper.MapperTemplate;
 import xy99.core.mybatis.provider.EmptyProvider;
 import xy99.core.mybatis.util.StringUtil;
 import java.lang.reflect.Method;
@@ -27,7 +26,7 @@ public class MapperHelper {
     private final Map<String, Boolean> msIdSkip;
     private List<Class<?>> registerClass;
     private Map<Class<?>, MapperTemplate> registerMapper;
-    private Map<String, MapperTemplate> msIdCache;
+    private Map<String, Object> msIdCache;
     private Config config;
 
     public MapperHelper() {
@@ -158,7 +157,7 @@ public class MapperHelper {
             } while(!((MapperTemplate)entry.getValue()).supportMethod(msId));
 
             this.msIdSkip.put(msId, Boolean.valueOf(true));
-            this.msIdCache.put(msId, (MapperTemplate) entry.getValue());
+            this.msIdCache.put(msId,  entry.getValue());
             return true;
         }
     }

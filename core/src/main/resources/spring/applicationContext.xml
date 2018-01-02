@@ -40,21 +40,19 @@
     <!--</bean>-->
 
     <!-- mapper definition -->
-    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <bean id="mapperScannerConfigurer" class="xy99.core.mybatis.spring.MapperScannerConfigurer">
         <property name="basePackage" value="*.**.mapper"/>
         <property name="processPropertyPlaceHolders" value="true"/>
         <property name="propertiesMap">
             <map>
                 <entry key="mappers" value="com.hand.hap.mybatis.common.Mapper"/>
                 <entry key="IDENTITY" value="${mybatis.identity}"/>
-                <entry key="dataBaseType" value="${db.type}"/>
                 <entry key="seqFormat" value="{3}_s.nextVal"/>
                 <entry key="enableMethodAnnotation" value="true"/>
             </map>
         </property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
-
 
     <context:component-scan base-package="**.*.service"/>
     <context:component-scan base-package="**.*.components"/>

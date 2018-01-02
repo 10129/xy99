@@ -1,10 +1,10 @@
 package xy99.core.mybatis.spring;
 
 
-import com.hand.hap.mybatis.common.Marker;
-import com.hand.hap.mybatis.mapperhelper.MapperHelper;
-import com.hand.hap.mybatis.spring.MapperFactoryBean;
-import com.hand.hap.mybatis.util.StringUtil;
+import xy99.core.mybatis.common.Marker;
+import xy99.core.mybatis.mapperhelper.MapperHelper;
+import xy99.core.mybatis.spring.MapperFactoryBean;
+import xy99.core.mybatis.util.StringUtil;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Properties;

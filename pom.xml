@@ -25,9 +25,9 @@
     <!-- mybatis版本号 -->
     <mybatis.version>3.2.7</mybatis.version>
     <!-- log4j日志文件管理包版本 -->
-    <!--<slf4j.version>1.7.21</slf4j.version>-->
-    <!--<log4j.version>1.2.17</log4j.version>-->
-    <!--<sitemesh.version>3.0.0</sitemesh.version>-->
+    <slf4j.version>1.7.21</slf4j.version>
+    <log4j.version>1.2.17</log4j.version>
+    <sitemesh.version>3.0.0</sitemesh.version>
   </properties>
     <!--&lt;!&ndash;<name>core</name>&ndash;&gt;-->
   <!--<url>http://maven.apache.org</url>-->

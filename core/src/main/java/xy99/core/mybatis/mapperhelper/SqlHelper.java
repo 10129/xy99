@@ -590,17 +590,17 @@ public class SqlHelper {
                     JoinTable sortColumn = column1.findJoinTableByName((String)sortFields1.getKey());
                     String joinSql = SqlHelper.generateJoinSQL(dto, column1, sortColumn, selectFields);
                     if(StringUtils.isNotBlank(joinSql)) {
-                        JoinType sortColumn1 = sortColumn.type();
-                        switch(null.$SwitchMap$javax$persistence$criteria$JoinType[sortColumn1.ordinal()]) {
-                            case 1:
-                                this.LEFT_OUTER_JOIN(joinSql);
-                                break;
-                            case 2:
-                                this.INNER_JOIN(joinSql);
-                                break;
-                            case 3:
-                                this.RIGHT_OUTER_JOIN(joinSql);
-                        }
+//                        JoinType sortColumn1 = sortColumn.type();
+//                        switch(null.$SwitchMap$javax$persistence$criteria$JoinType[sortColumn1.ordinal()]) {
+//                            case 1:
+//                                this.LEFT_OUTER_JOIN(joinSql);
+//                                break;
+//                            case 2:
+//                                this.INNER_JOIN(joinSql);
+//                                break;
+//                            case 3:
+//                                this.RIGHT_OUTER_JOIN(joinSql);
+//                        }
                     }
                 }
 
@@ -628,7 +628,7 @@ public class SqlHelper {
                             }
                         }
 
-                        return;
+//                        return;
                     }
                 } else {
                     column2 = table.getSortColumns().iterator();
