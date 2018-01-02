@@ -6,7 +6,7 @@ import xy99.core.mybatis.common.query.Selection;
 import xy99.core.mybatis.common.query.SortField;
 import xy99.core.mybatis.common.query.SortType;
 import xy99.core.mybatis.common.query.WhereField;
-import com.hand.hap.system.dto.BaseDTO;
+//import com.hand.hap.system.dto.BaseDTO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -22,15 +22,15 @@ public class Criteria {
     public Criteria() {
     }
 
-    public Criteria(Object obj) {
-        if(obj instanceof BaseDTO) {
-            BaseDTO dto = (BaseDTO)obj;
-            if(dto != null && dto.getSortname() != null) {
-                this.sort(dto.getSortname(), dto.getSortorder() != null?SortType.valueOf(dto.getSortorder().toUpperCase()):SortType.ASC);
-            }
-        }
-
-    }
+//    public Criteria(Object obj) {
+//        if(obj instanceof BaseDTO) {
+//            BaseDTO dto = (BaseDTO)obj;
+//            if(dto != null && dto.getSortname() != null) {
+//                this.sort(dto.getSortname(), dto.getSortorder() != null?SortType.valueOf(dto.getSortorder().toUpperCase()):SortType.ASC);
+//            }
+//        }
+//
+//    }
 
     public Criteria sort(String field, SortType sortType) {
         if(this.sortFields == null) {

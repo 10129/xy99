@@ -158,7 +158,7 @@ public class MapperHelper {
             } while(!((MapperTemplate)entry.getValue()).supportMethod(msId));
 
             this.msIdSkip.put(msId, Boolean.valueOf(true));
-            this.msIdCache.put(msId, entry.getValue());
+            this.msIdCache.put(msId, (MapperTemplate) entry.getValue());
             return true;
         }
     }

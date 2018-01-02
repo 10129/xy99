@@ -1,8 +1,8 @@
 package xy99.core.mybatis.mapperhelper;
 
 
-import com.hand.hap.core.annotation.MultiLanguage;
-import com.hand.hap.core.annotation.MultiLanguageField;
+import xy99.core.core.annotation.MultiLanguage;
+import xy99.core.core.annotation.MultiLanguageFiled;
 import xy99.core.mybatis.annotation.ColumnType;
 import xy99.core.mybatis.annotation.Condition;
 import xy99.core.mybatis.annotation.ExtensionAttribute;
@@ -18,7 +18,6 @@ import xy99.core.mybatis.entity.Config;
 import xy99.core.mybatis.entity.EntityColumn;
 import xy99.core.mybatis.entity.EntityField;
 import xy99.core.mybatis.entity.EntityTable;
-import xy99.core.mybatis.mapperhelper.FieldHelper;
 import xy99.core.mybatis.util.StringUtil;
 import java.lang.annotation.Annotation;
 import java.util.Date;
@@ -298,7 +297,7 @@ public class EntityHelper {
                 entityTable.getJoinMapping().put(jts.name(), entityColumn);
             }
 
-            if(field.isAnnotationPresent(MultiLanguageField.class)) {
+            if(field.isAnnotationPresent(MultiLanguageFiled.class)) {
                 JoinColumn var9 = new JoinColumn() {
                     public Class<? extends Annotation> annotationType() {
                         return JoinColumn.class;
@@ -454,7 +453,7 @@ public class EntityHelper {
             }
         }
 
-        if(field.isAnnotationPresent(MultiLanguageField.class)) {
+        if(field.isAnnotationPresent(MultiLanguageFiled.class)) {
             entityColumn.setMultiLanguageField(true);
         }
 

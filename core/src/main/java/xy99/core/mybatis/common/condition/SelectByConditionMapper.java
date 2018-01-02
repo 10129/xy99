@@ -1,6 +1,6 @@
 package xy99.core.mybatis.common.condition;
 
-import com.hand.hap.mybatis.provider.ConditionProvider;
+import xy99.core.mybatis.provider.ConditionProvider;
 import java.util.List;
 import org.apache.ibatis.annotations.SelectProvider;
 
