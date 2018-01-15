@@ -85,4 +85,12 @@
     <error-code>500</error-code>
     <location>/WEB-INF/500.html</location>
   </error-page>
-</web-app>
+   <servlet>
+          <servlet-name>weChatServlet</servlet-name>
+          <servlet-class>xy99.core.weiApi.weChatAccounts</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>weChatServlet</servlet-name>
+        <url-pattern>/weChatServlet</url-pattern> <!--url-pattern必须与servlet-name一致-->
+      </servlet-mapping>
+  </web-app>
