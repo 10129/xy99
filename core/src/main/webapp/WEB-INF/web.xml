@@ -28,4 +28,21 @@
     <error-code>500</error-code>
     <location>/WEB-INF/500.html</location>
   </error-page>
+  <servlet>
+    <servlet-name>weChatServlet</servlet-name>
+    <servlet-class>com.xy99.weiApi.weChatServlet.weChatAccounts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>weChatServlet</servlet-name>
+    <url-pattern>/weChatServlet</url-pattern> <!--url-pattern必须与servlet-name一致-->
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>accessTokenServlet</servlet-name>
+    <servlet-class>com.xy99.weiApi.weChatServlet.AccessTokenServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>accessTokenServlet</servlet-name>
+    <url-pattern>/accessTokenServlet</url-pattern> <!--url-pattern必须与servlet-name一致-->
+  </servlet-mapping>
 </web-app>
