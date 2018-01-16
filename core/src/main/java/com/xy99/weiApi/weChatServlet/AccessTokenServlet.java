@@ -2,9 +2,9 @@ package com.xy99.weiApi.weChatServlet;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.cn.xy99.weiApi.dto.AccessToken;
-import com.cn.xy99.weiApi.dto.AccessTokenInfo;
-import com.cn.xy99.weiApi.util.NetWorkUtil;
+import com.xy99.weiApi.dto.AccessToken;
+import com.xy99.weiApi.dto.AccessTokenInfo;
+import com.xy99.weiApi.util.NetWorkUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

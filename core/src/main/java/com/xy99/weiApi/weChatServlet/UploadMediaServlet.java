@@ -4,7 +4,7 @@ package com.xy99.weiApi.weChatServlet;
  * Created by xieshuai on 2018/1/16.
  */
 import com.alibaba.fastjson.JSONObject;
-import com.cn.xy99.weiApi.util.UploadMediaApiUtil;
+import com.xy99.weiApi.util.UploadMediaApiUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -42,6 +42,18 @@
             <artifactId>standard</artifactId>
             <version>1.1.2</version>
         </dependency>
+        <!-- httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.4</version>
+        </dependency>
+        <!-- slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -151,6 +163,7 @@
                         <artifactId>groovy-xml</artifactId>
                         <version>2.4.6</version>
                     </dependency>
+
 
                     <dependency>
                         <groupId>hapx1</groupId>
